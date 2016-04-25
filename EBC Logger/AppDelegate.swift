@@ -8,10 +8,13 @@
 
 import Cocoa
 
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
+    
+    let arduino = ArduinoController()
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
@@ -22,6 +25,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
-
+    @IBAction func connectToArduino(sender: AnyObject) {
+        arduino.connect()
+    }
+    
+    @IBAction func disconnectArduino(sender: AnyObject) {
+        arduino.disconnect()
+    }
 }
 

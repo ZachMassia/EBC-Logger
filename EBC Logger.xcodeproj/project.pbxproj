@@ -7,17 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D551CB6ADE06B18428744CE /* Pods_EBC_Logger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87DFE4326A13CDED43CA82C /* Pods_EBC_Logger.framework */; };
 		928F89661CC86A3200D8ECCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F89651CC86A3200D8ECCE /* AppDelegate.swift */; };
 		928F89681CC86A3200D8ECCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928F89671CC86A3200D8ECCE /* Assets.xcassets */; };
 		928F896B1CC86A3200D8ECCE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 928F89691CC86A3200D8ECCE /* MainMenu.xib */; };
+		92E4B6C01CCDBC92000A1397 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 92E4B6BE1CCDBC92000A1397 /* Podfile.lock */; };
+		92E4B6C11CCDBC92000A1397 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 92E4B6BF1CCDBC92000A1397 /* Podfile */; };
+		92F59F771CC9B60B00CCEF14 /* ArduinoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F59F761CC9B60B00CCEF14 /* ArduinoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E36FF2F22853CEFC63166E5 /* Pods-EBC Logger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBC Logger.release.xcconfig"; path = "Pods/Target Support Files/Pods-EBC Logger/Pods-EBC Logger.release.xcconfig"; sourceTree = "<group>"; };
 		928F89621CC86A3200D8ECCE /* EBC Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EBC Logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		928F89651CC86A3200D8ECCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		928F89671CC86A3200D8ECCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		928F896A1CC86A3200D8ECCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		928F896C1CC86A3200D8ECCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92E4B6BE1CCDBC92000A1397 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
+		92E4B6BF1CCDBC92000A1397 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		92F59F761CC9B60B00CCEF14 /* ArduinoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArduinoController.swift; sourceTree = "<group>"; };
+		A4B4026DC70B98D961291982 /* Pods-EBC Logger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBC Logger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EBC Logger/Pods-EBC Logger.debug.xcconfig"; sourceTree = "<group>"; };
+		A87DFE4326A13CDED43CA82C /* Pods_EBC_Logger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EBC_Logger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D551CB6ADE06B18428744CE /* Pods_EBC_Logger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,8 +45,12 @@
 		928F89591CC86A3200D8ECCE = {
 			isa = PBXGroup;
 			children = (
+				92E4B6BE1CCDBC92000A1397 /* Podfile.lock */,
+				92E4B6BF1CCDBC92000A1397 /* Podfile */,
 				928F89641CC86A3200D8ECCE /* EBC Logger */,
 				928F89631CC86A3200D8ECCE /* Products */,
+				B967A20C13962969A8AFDDB8 /* Pods */,
+				AD84E42DF32B0E0EA6292C29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,8 +69,26 @@
 				928F89671CC86A3200D8ECCE /* Assets.xcassets */,
 				928F89691CC86A3200D8ECCE /* MainMenu.xib */,
 				928F896C1CC86A3200D8ECCE /* Info.plist */,
+				92F59F761CC9B60B00CCEF14 /* ArduinoController.swift */,
 			);
 			path = "EBC Logger";
+			sourceTree = "<group>";
+		};
+		AD84E42DF32B0E0EA6292C29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A87DFE4326A13CDED43CA82C /* Pods_EBC_Logger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B967A20C13962969A8AFDDB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4B4026DC70B98D961291982 /* Pods-EBC Logger.debug.xcconfig */,
+				1E36FF2F22853CEFC63166E5 /* Pods-EBC Logger.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 928F896F1CC86A3200D8ECCE /* Build configuration list for PBXNativeTarget "EBC Logger" */;
 			buildPhases = (
+				67912CD8E7AFFDCFE2DC04A1 /* Check Pods Manifest.lock */,
 				928F895E1CC86A3200D8ECCE /* Sources */,
 				928F895F1CC86A3200D8ECCE /* Frameworks */,
 				928F89601CC86A3200D8ECCE /* Resources */,
+				95119DCA035B71DC75F3904B /* Embed Pods Frameworks */,
+				DB12716D23D431D5B2E4113C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -116,18 +152,69 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E4B6C01CCDBC92000A1397 /* Podfile.lock in Resources */,
 				928F89681CC86A3200D8ECCE /* Assets.xcassets in Resources */,
+				92E4B6C11CCDBC92000A1397 /* Podfile in Resources */,
 				928F896B1CC86A3200D8ECCE /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		67912CD8E7AFFDCFE2DC04A1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		95119DCA035B71DC75F3904B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EBC Logger/Pods-EBC Logger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB12716D23D431D5B2E4113C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EBC Logger/Pods-EBC Logger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		928F895E1CC86A3200D8ECCE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F59F771CC9B60B00CCEF14 /* ArduinoController.swift in Sources */,
 				928F89661CC86A3200D8ECCE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +317,7 @@
 		};
 		928F89701CC86A3200D8ECCE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4B4026DC70B98D961291982 /* Pods-EBC Logger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -237,11 +325,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.ZachMassia.EBC-Logger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
 		928F89711CC86A3200D8ECCE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E36FF2F22853CEFC63166E5 /* Pods-EBC Logger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -249,6 +339,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.ZachMassia.EBC-Logger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -271,6 +362,7 @@
 				928F89711CC86A3200D8ECCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
