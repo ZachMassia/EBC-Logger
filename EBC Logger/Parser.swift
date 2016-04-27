@@ -86,12 +86,9 @@ class Parser {
      
         - Parameter message: The unparsed log format string.
     */
-    func registerLogFormat(message: String) {
-        let serialMsg = try? parseRawSerialMessage(fromString: message)
-        
-        if let data = serialMsg?.data {
-            msgFormat = data
-        }
+    func registerLogFormat(message: String) throws {
+        let serialMsg = try parseRawSerialMessage(fromString: message)
+        msgFormat = serialMsg.data
     }
 
     /**
