@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D551CB6ADE06B18428744CE /* Pods_EBC_Logger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87DFE4326A13CDED43CA82C /* Pods_EBC_Logger.framework */; };
+		921F71D61CCEFDCE0059EB65 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F71D51CCEFDCE0059EB65 /* Parser.swift */; };
+		923F4CFB1CD051C200D4729C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4CFA1CD051C200D4729C /* Models.swift */; };
 		928F89661CC86A3200D8ECCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F89651CC86A3200D8ECCE /* AppDelegate.swift */; };
 		928F89681CC86A3200D8ECCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928F89671CC86A3200D8ECCE /* Assets.xcassets */; };
 		928F896B1CC86A3200D8ECCE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 928F89691CC86A3200D8ECCE /* MainMenu.xib */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		1E36FF2F22853CEFC63166E5 /* Pods-EBC Logger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBC Logger.release.xcconfig"; path = "Pods/Target Support Files/Pods-EBC Logger/Pods-EBC Logger.release.xcconfig"; sourceTree = "<group>"; };
+		921F71D51CCEFDCE0059EB65 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		923F4CFA1CD051C200D4729C /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		928F89621CC86A3200D8ECCE /* EBC Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EBC Logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		928F89651CC86A3200D8ECCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		928F89671CC86A3200D8ECCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				928F89691CC86A3200D8ECCE /* MainMenu.xib */,
 				928F896C1CC86A3200D8ECCE /* Info.plist */,
 				92F59F761CC9B60B00CCEF14 /* ArduinoController.swift */,
+				921F71D51CCEFDCE0059EB65 /* Parser.swift */,
+				923F4CFA1CD051C200D4729C /* Models.swift */,
 			);
 			path = "EBC Logger";
 			sourceTree = "<group>";
@@ -216,6 +222,8 @@
 			files = (
 				92F59F771CC9B60B00CCEF14 /* ArduinoController.swift in Sources */,
 				928F89661CC86A3200D8ECCE /* AppDelegate.swift in Sources */,
+				921F71D61CCEFDCE0059EB65 /* Parser.swift in Sources */,
+				923F4CFB1CD051C200D4729C /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

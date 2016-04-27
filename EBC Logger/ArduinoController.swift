@@ -11,9 +11,9 @@ import ORSSerial
 
 
 class ArduinoController: NSObject, ORSSerialPortDelegate {
-    
-    let serialPortManager = ORSSerialPortManager.sharedSerialPortManager()
     let baudRate = 115200
+    let serialPortManager = ORSSerialPortManager.sharedSerialPortManager()
+    let parser = Parser()
     
     let formatDescriptor = ORSSerialPacketDescriptor(
         prefixString: "!log_format",
@@ -80,15 +80,18 @@ class ArduinoController: NSObject, ORSSerialPortDelegate {
     func serialPort(serialPort: ORSSerialPort,
                     didReceivePacket packetData: NSData,
                     matchingDescriptor descriptor: ORSSerialPacketDescriptor) {
-        let dataAsStr = NSString(data: packetData, encoding: NSASCIIStringEncoding)
-        
+        let dataAsStr = String(data: packetData, encoding: NSASCIIStringEncoding)
         
         if let str = dataAsStr {
             switch descriptor {
             case formatDescriptor:
-                print("Format msg[\(packetData.length)]: '\(str)'")
+                do {
+                    try parser.registerLogFormat(str)
+                    print("Log format registered: [\(packetData.length)]: \(str)")
+                } catch { print("Could not register log format") }
             case readingsDescriptor:
                 print("Readings msg[\(packetData.length)]: '\(str)'")
+                print(parser.parseSensorReading(str))
             default:
                 break
             }
