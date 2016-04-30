@@ -19,8 +19,8 @@ class Session: Object {
     /// Detailed session description.
     dynamic var desc = ""
 
-    /// The log's initial creation time, stored in string format.
-    dynamic var creationTime = ""
+    /// The log's initial creation time.
+    dynamic var creationTime = NSDate()
 
     /// The session's log entries.
     let logs = List<Log>()
@@ -44,7 +44,7 @@ class Log: Object {
     dynamic var mapReading: Float = 0.0
 
     /// Current duty cycle to solenoid.
-    dynamic var dutyCycle = 0
+    dynamic var dutyCycle:Float = 0.0
 
     /// PID tuning variable.
     dynamic var kP: Float = 0.0

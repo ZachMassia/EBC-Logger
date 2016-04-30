@@ -8,21 +8,25 @@
 
 import Foundation
 import ORSSerial
+import RealmSwift
 
 
 class ArduinoController: NSObject, ORSSerialPortDelegate {
     let baudRate = 115200
     let serialPortManager = ORSSerialPortManager.sharedSerialPortManager()
     let parser = Parser()
+    let realm = try! Realm()
+
+    var currentSession: Session?
     
     let formatDescriptor = ORSSerialPacketDescriptor(
-        prefixString: "!log_format",
+        prefixString: "!logFormat",
         suffixString: "|",
         maximumPacketLength: 250,
         userInfo: nil)
     
     let readingsDescriptor = ORSSerialPacketDescriptor(
-        prefixString: "!sensor_readings",
+        prefixString: "!sensorReadings",
         suffixString: "|",
         maximumPacketLength: 250,
         userInfo: nil)
@@ -38,21 +42,27 @@ class ArduinoController: NSObject, ORSSerialPortDelegate {
             }
         }
     }
-    
+
     deinit {
         serialPort = nil
     }
 
-    func connect() {
-        self.serialPort = serialPortManager.availablePorts[0]
+    func connectWithSession(name: String, description: String) {
+        serialPort = serialPortManager.availablePorts[0]
+        currentSession = Session(value: ["name": name, "desc": description])
+        currentSession?.sessionID = NSUUID.init().UUIDString
+        try! realm.write {
+            realm.add(currentSession!)
+        }
     }
     
     func disconnect() {
-        if let port = self.serialPort {
+        if let port = serialPort {
             print("Closed serial port '\(port.name)'")
             port.close()
-            self.serialPort = nil
+            serialPort = nil
         }
+        currentSession = nil
     }
     
     func serialPortWasOpened(serialPort: ORSSerialPort) {
@@ -90,8 +100,27 @@ class ArduinoController: NSObject, ORSSerialPortDelegate {
                     print("Log format registered: [\(packetData.length)]: \(str)")
                 } catch { print("Could not register log format") }
             case readingsDescriptor:
-                print("Readings msg[\(packetData.length)]: '\(str)'")
-                print(parser.parseSensorReading(str))
+                do {
+                    let log = Log()
+                    log.logID = NSUUID.init().UUIDString
+                    let r = try parser.parseSensorReading(str)
+
+                    log.timestamp  = Int(r["timestamp"]!)!
+                    log.setpoint   = Float(r["setpoint"]!)!
+                    log.mapReading = Float(r["mapReading"]!)!
+                    log.dutyCycle  = Float(r["dutyCycle"]!)!
+                    log.kP         = Float(r["kP"]!)!
+                    log.kI         = Float(r["kI"]!)!
+                    log.kD         = Float(r["kD"]!)!
+
+                    try realm.write {
+                        currentSession!.logs.append(log)
+                    }
+
+                    NSNotificationCenter.defaultCenter()
+                        .postNotificationName("SENSOR_READING_NOTIFICATION", object: nil)
+                } catch { print("Error parsing serial msg <\(str)>") }
+
             default:
                 break
             }

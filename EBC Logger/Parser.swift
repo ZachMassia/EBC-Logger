@@ -101,11 +101,15 @@ class Parser {
      
         - Returns: A dictionary of sensor names to values.
     */
-    func parseSensorReading(message: String) -> [String: String] {
+    func parseSensorReading(message: String) throws -> [String: String] {
         let serialMsg = try? parseRawSerialMessage(fromString: message)
         var readings = [String: String]()
 
         if let data = serialMsg?.data {
+            guard data.count == msgFormat.count else {
+                throw SerialMessageError.ExtraData
+            }
+
             for (sensorID, value) in data.enumerate() {
                 let sensorName = msgFormat[sensorID]
                 readings[sensorName] = value
