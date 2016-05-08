@@ -18,6 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var sessionNameField: NSTextField!
     @IBOutlet weak var sessionDescField: NSTextField!
 
+    @IBOutlet weak var portLabel: NSTextField!
+    @IBOutlet weak var sessionLabel: NSTextField!
 
     let realm = try! Realm()
 
@@ -30,7 +32,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         NSNotificationCenter.defaultCenter()
             .addObserver(self, selector: #selector(AppDelegate.didReceiveSensorReadingNotification),
-                         name: "SENSOR_READING_NOTIFICATION", object: nil)
+                         name: LoggerNotifications.sensorReading, object: nil)
+
+        NSNotificationCenter.defaultCenter()
+            .addObserver(self, selector: #selector(AppDelegate.newSessionDidStart),
+                         name: LoggerNotifications.sessionStarted, object: nil)
+
+        NSNotificationCenter.defaultCenter()
+            .addObserver(self, selector: #selector(AppDelegate.sessionDidEnd),
+                         name: LoggerNotifications.sessionEnded, object: nil)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -47,6 +57,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func didReceiveSensorReadingNotification(notification: NSNotification) {
         boostBar.floatValue = (arduino.currentSession?.logs.last?.mapReading)!
+    }
+
+    func newSessionDidStart(notification: NSNotification) {
+        if let info = notification.userInfo as? Dictionary<String, String> {
+            sessionLabel.stringValue = info[LoggerNotifications.sessionNameKey]!
+            portLabel.stringValue = info[LoggerNotifications.portNameKey]!
+        }
+        sessionNameField.stringValue = ""
+        sessionDescField.stringValue = ""
+    }
+
+    func sessionDidEnd(notification: NSNotification) {
+        sessionLabel.stringValue = ""
+        portLabel.stringValue = ""
     }
 }
 

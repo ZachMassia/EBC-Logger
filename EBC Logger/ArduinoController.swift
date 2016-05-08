@@ -54,6 +54,11 @@ class ArduinoController: NSObject, ORSSerialPortDelegate {
         try! realm.write {
             realm.add(currentSession!)
         }
+
+        NSNotificationCenter.defaultCenter()
+            .postNotificationName(LoggerNotifications.sessionStarted, object: nil,
+                                  userInfo: [LoggerNotifications.sessionNameKey: name,
+                                             LoggerNotifications.portNameKey: serialPort!.name])
     }
     
     func disconnect() {
@@ -63,6 +68,9 @@ class ArduinoController: NSObject, ORSSerialPortDelegate {
             serialPort = nil
         }
         currentSession = nil
+
+        NSNotificationCenter.defaultCenter()
+            .postNotificationName(LoggerNotifications.sessionEnded, object: nil)
     }
     
     func serialPortWasOpened(serialPort: ORSSerialPort) {
@@ -118,7 +126,7 @@ class ArduinoController: NSObject, ORSSerialPortDelegate {
                     }
 
                     NSNotificationCenter.defaultCenter()
-                        .postNotificationName("SENSOR_READING_NOTIFICATION", object: nil)
+                        .postNotificationName(LoggerNotifications.sensorReading, object: nil)
                 } catch { print("Error parsing serial msg <\(str)>") }
 
             default:

@@ -16,6 +16,7 @@
 		92E4B6C01CCDBC92000A1397 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 92E4B6BE1CCDBC92000A1397 /* Podfile.lock */; };
 		92E4B6C11CCDBC92000A1397 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 92E4B6BF1CCDBC92000A1397 /* Podfile */; };
 		92F59F771CC9B60B00CCEF14 /* ArduinoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F59F761CC9B60B00CCEF14 /* ArduinoController.swift */; };
+		92F7DD021CDD444300F0DCD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F7DD011CDD444300F0DCD8 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		92E4B6BE1CCDBC92000A1397 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		92E4B6BF1CCDBC92000A1397 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		92F59F761CC9B60B00CCEF14 /* ArduinoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArduinoController.swift; sourceTree = "<group>"; };
+		92F7DD011CDD444300F0DCD8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A4B4026DC70B98D961291982 /* Pods-EBC Logger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBC Logger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EBC Logger/Pods-EBC Logger.debug.xcconfig"; sourceTree = "<group>"; };
 		A87DFE4326A13CDED43CA82C /* Pods_EBC_Logger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EBC_Logger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,6 +76,7 @@
 				928F89691CC86A3200D8ECCE /* MainMenu.xib */,
 				928F896C1CC86A3200D8ECCE /* Info.plist */,
 				92F59F761CC9B60B00CCEF14 /* ArduinoController.swift */,
+				92F7DD011CDD444300F0DCD8 /* Constants.swift */,
 				921F71D51CCEFDCE0059EB65 /* Parser.swift */,
 				923F4CFA1CD051C200D4729C /* Models.swift */,
 			);
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F7DD021CDD444300F0DCD8 /* Constants.swift in Sources */,
 				92F59F771CC9B60B00CCEF14 /* ArduinoController.swift in Sources */,
 				928F89661CC86A3200D8ECCE /* AppDelegate.swift in Sources */,
 				921F71D61CCEFDCE0059EB65 /* Parser.swift in Sources */,
