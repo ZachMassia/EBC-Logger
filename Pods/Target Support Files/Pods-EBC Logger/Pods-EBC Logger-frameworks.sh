@@ -84,11 +84,13 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-EBC Logger/Charts.framework"
   install_framework "Pods-EBC Logger/ORSSerial.framework"
   install_framework "Pods-EBC Logger/Realm.framework"
   install_framework "Pods-EBC Logger/RealmSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-EBC Logger/Charts.framework"
   install_framework "Pods-EBC Logger/ORSSerial.framework"
   install_framework "Pods-EBC Logger/Realm.framework"
   install_framework "Pods-EBC Logger/RealmSwift.framework"

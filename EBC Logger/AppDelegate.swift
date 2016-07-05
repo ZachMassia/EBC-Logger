@@ -14,12 +14,16 @@ import RealmSwift
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-    @IBOutlet weak var boostBar: NSLevelIndicator!
     @IBOutlet weak var sessionNameField: NSTextField!
     @IBOutlet weak var sessionDescField: NSTextField!
+    @IBOutlet weak var portPopUp: NSPopUpButton!
 
     @IBOutlet weak var portLabel: NSTextField!
     @IBOutlet weak var sessionLabel: NSTextField!
+
+    @IBOutlet weak var graphView: NSView!
+
+    var graphController = MAPGraphViewController()
 
     let realm = try! Realm()
 
@@ -41,6 +45,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSNotificationCenter.defaultCenter()
             .addObserver(self, selector: #selector(AppDelegate.sessionDidEnd),
                          name: LoggerNotifications.sessionEnded, object: nil)
+
+        NSNotificationCenter.defaultCenter()
+            .addObserver(self, selector: #selector(AppDelegate.updatePortDropDown),
+                         name: "ORSSerialPortsWereConnectedNotification", object: nil)
+
+        NSNotificationCenter.defaultCenter()
+            .addObserver(self, selector: #selector(AppDelegate.updatePortDropDown),
+                         name: "ORSSerialPortsWereDisconnectedNotification", object: nil)
+
+        graphView.addSubview(graphController.view)
+
+        updatePortDropDown(portPopUp) // popUp object passed because cannot pass nil
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -48,7 +64,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func connectToArduino(sender: AnyObject) {
-        arduino.connectWithSession(sessionNameField.stringValue, description: sessionDescField.stringValue)
+        arduino.connectWithSession(sessionNameField.stringValue,
+                                   description: sessionDescField.stringValue,
+                                   portIndex: portPopUp.indexOfSelectedItem)
     }
     
     @IBAction func disconnectArduino(sender: AnyObject) {
@@ -56,7 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func didReceiveSensorReadingNotification(notification: NSNotification) {
-        boostBar.floatValue = (arduino.currentSession?.logs.last?.mapReading)!
+        //boostBar.floatValue = (arduino.currentSession?.logs.last?.mapReading)!
     }
 
     func newSessionDidStart(notification: NSNotification) {
@@ -71,6 +89,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func sessionDidEnd(notification: NSNotification) {
         sessionLabel.stringValue = ""
         portLabel.stringValue = ""
+    }
+
+    func updatePortDropDown(sender: AnyObject) {
+        portPopUp.removeAllItems()
+        let portTitles = arduino.serialPortManager.availablePorts.map {$0.name}
+        portPopUp.addItemsWithTitles(portTitles)
+        portPopUp.selectItemAtIndex(0)
     }
 }
 

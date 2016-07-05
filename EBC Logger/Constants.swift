@@ -16,3 +16,13 @@ struct LoggerNotifications {
     static let sessionNameKey = "sessionName"
     static let portNameKey    = "portName"
 }
+
+struct TwoBarMAP {
+    static let minPSIA = 1.3
+    static let maxPSIA = 30.2
+}
+
+struct ThreeBarMAP {
+    static let minPSIA = 0.5
+    static let maxPSIA = 45.7
+}

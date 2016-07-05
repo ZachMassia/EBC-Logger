@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A2AE051841AC100AB3CF242D796496CC8AB8152C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5E5CD4858DAF0F48B03A77F1A7D9E2CAF972C13A" : 0,
+    "A2AE051841AC100AB3CF242D796496CC8AB8152C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7E2028E1-B89B-4BD8-A679-9F6343A1BECE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5E5CD4858DAF0F48B03A77F1A7D9E2CAF972C13A" : "EBC%20Logger\/extern\/AmCharts\/",
+    "A2AE051841AC100AB3CF242D796496CC8AB8152C" : "EBC%20Logger\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "EBC Logger",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "EBC Logger.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ChimpStudios\/AmCharts",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5E5CD4858DAF0F48B03A77F1A7D9E2CAF972C13A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ZachMassia\/EBC-Logger.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A2AE051841AC100AB3CF242D796496CC8AB8152C"
+    }
+  ]
+}

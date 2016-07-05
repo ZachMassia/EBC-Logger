@@ -47,8 +47,8 @@ class ArduinoController: NSObject, ORSSerialPortDelegate {
         serialPort = nil
     }
 
-    func connectWithSession(name: String, description: String) {
-        serialPort = serialPortManager.availablePorts[0]
+    func connectWithSession(name: String, description: String, portIndex: Int) {
+        serialPort = serialPortManager.availablePorts[portIndex]
         currentSession = Session(value: ["name": name, "desc": description])
         currentSession?.sessionID = NSUUID.init().UUIDString
         try! realm.write {

@@ -13,6 +13,8 @@
 		928F89661CC86A3200D8ECCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F89651CC86A3200D8ECCE /* AppDelegate.swift */; };
 		928F89681CC86A3200D8ECCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928F89671CC86A3200D8ECCE /* Assets.xcassets */; };
 		928F896B1CC86A3200D8ECCE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 928F89691CC86A3200D8ECCE /* MainMenu.xib */; };
+		92DEE54D1CDFD526005C98E4 /* MAPGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DEE54B1CDFD526005C98E4 /* MAPGraphViewController.swift */; };
+		92DEE54E1CDFD526005C98E4 /* MAPGraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DEE54C1CDFD526005C98E4 /* MAPGraphViewController.xib */; };
 		92E4B6C01CCDBC92000A1397 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 92E4B6BE1CCDBC92000A1397 /* Podfile.lock */; };
 		92E4B6C11CCDBC92000A1397 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 92E4B6BF1CCDBC92000A1397 /* Podfile */; };
 		92F59F771CC9B60B00CCEF14 /* ArduinoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F59F761CC9B60B00CCEF14 /* ArduinoController.swift */; };
@@ -21,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		1E36FF2F22853CEFC63166E5 /* Pods-EBC Logger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBC Logger.release.xcconfig"; path = "Pods/Target Support Files/Pods-EBC Logger/Pods-EBC Logger.release.xcconfig"; sourceTree = "<group>"; };
+		920F9CFA1CDFA94300991F98 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../Library/Developer/Xcode/DerivedData/EBC_Logger-gfcyuluzlcskqnemrwvgujrwmbuv/Build/Products/Debug/Charts.framework"; sourceTree = "<group>"; };
 		921F71D51CCEFDCE0059EB65 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		923F4CFA1CD051C200D4729C /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		928F89621CC86A3200D8ECCE /* EBC Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EBC Logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +31,8 @@
 		928F89671CC86A3200D8ECCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		928F896A1CC86A3200D8ECCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		928F896C1CC86A3200D8ECCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92DEE54B1CDFD526005C98E4 /* MAPGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MAPGraphViewController.swift; sourceTree = "<group>"; };
+		92DEE54C1CDFD526005C98E4 /* MAPGraphViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAPGraphViewController.xib; sourceTree = "<group>"; };
 		92E4B6BE1CCDBC92000A1397 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		92E4B6BF1CCDBC92000A1397 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		92F59F761CC9B60B00CCEF14 /* ArduinoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArduinoController.swift; sourceTree = "<group>"; };
@@ -76,6 +81,8 @@
 				928F89691CC86A3200D8ECCE /* MainMenu.xib */,
 				928F896C1CC86A3200D8ECCE /* Info.plist */,
 				92F59F761CC9B60B00CCEF14 /* ArduinoController.swift */,
+				92DEE54B1CDFD526005C98E4 /* MAPGraphViewController.swift */,
+				92DEE54C1CDFD526005C98E4 /* MAPGraphViewController.xib */,
 				92F7DD011CDD444300F0DCD8 /* Constants.swift */,
 				921F71D51CCEFDCE0059EB65 /* Parser.swift */,
 				923F4CFA1CD051C200D4729C /* Models.swift */,
@@ -86,6 +93,7 @@
 		AD84E42DF32B0E0EA6292C29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				920F9CFA1CDFA94300991F98 /* Charts.framework */,
 				A87DFE4326A13CDED43CA82C /* Pods_EBC_Logger.framework */,
 			);
 			name = Frameworks;
@@ -161,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92DEE54E1CDFD526005C98E4 /* MAPGraphViewController.xib in Resources */,
 				92E4B6C01CCDBC92000A1397 /* Podfile.lock in Resources */,
 				928F89681CC86A3200D8ECCE /* Assets.xcassets in Resources */,
 				92E4B6C11CCDBC92000A1397 /* Podfile in Resources */,
@@ -223,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92DEE54D1CDFD526005C98E4 /* MAPGraphViewController.swift in Sources */,
 				92F7DD021CDD444300F0DCD8 /* Constants.swift in Sources */,
 				92F59F771CC9B60B00CCEF14 /* ArduinoController.swift in Sources */,
 				928F89661CC86A3200D8ECCE /* AppDelegate.swift in Sources */,
@@ -337,7 +347,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.ZachMassia.EBC-Logger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -351,7 +360,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.ZachMassia.EBC-Logger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ORSSerialPort.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +32,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>76022ABA5AF14FE1D3230D0E81F47D4C</key>
+		<key>1FE960AC64370F923A7226E88777D3F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B91E7656D7DA5CEBD5910570B2E1D341</key>
+		<key>86FCAFBE3ACE0BF6FEB45151E8D15D55</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EF294A3885A88A75560C1451957C4A5B</key>
+		<key>F831852D7F125168B1EF17FC76AB893C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA073A2B6A40241050D91303EE6DF561</key>
 		<dict>
 			<key>primary</key>
 			<true/>

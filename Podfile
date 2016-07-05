@@ -6,5 +6,7 @@ use_frameworks!
 target 'EBC Logger' do
   pod 'ORSSerialPort'
   pod 'RealmSwift'
+  pod 'Charts'
+  pod 'Charts/Realm'
 end
 

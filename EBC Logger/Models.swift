@@ -56,9 +56,7 @@ class Log: Object {
     dynamic var kD: Float = 0.0
 
     /// Back reference to the session this log belongs to.
-    var session: [Session] {
-        return linkingObjects(Session.self, forProperty: "logs")
-    }
+    let session = LinkingObjects(fromType: Session.self, property: "logs")
 
     override static func primaryKey() -> String? {
         return "logID"
